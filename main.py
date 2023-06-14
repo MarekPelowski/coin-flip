@@ -1,7 +1,17 @@
 from random import randint
 
-flip = 127
+flip = int(input("Enter the amount of coin flips: "))
 status = ""
+tails = 0
+heads = 0
+
+def status_check():
+    global tails, heads
+    if status == "tails":
+        tails = tails + 1
+    elif status == "heads":
+        heads = heads + 1
+
 
 def chance():
     global status
@@ -15,7 +25,8 @@ def chance():
 def calculation():
     for x in range(flip):
         chance()
-        print(status)
+        print(status, "\n")
+        status_check()
 
 
 calculation()
