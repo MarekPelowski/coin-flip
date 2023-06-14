@@ -5,6 +5,7 @@ status = ""
 tails = 0
 heads = 0
 
+
 def status_check():
     global tails, heads
     if status == "tails":
@@ -22,11 +23,12 @@ def chance():
         status = "heads"
 
 
-def calculation():
-    for x in range(flip):
-        chance()
-        print(status, "\n")
-        status_check()
+for x in range(flip):
+    chance()
+    status_check()
+    print(status, "\n")
+tails_percent = (tails * 100) / flip
+heads_percent = (heads * 100) / flip
 
-
-calculation()
+print("tails: ", tails_percent)
+print("heads: ", heads_percent)
