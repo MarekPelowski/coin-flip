@@ -30,5 +30,5 @@ for x in range(flip):
 tails_percent = (tails * 100) / flip
 heads_percent = (heads * 100) / flip
 
-print("tails: ", tails_percent)
-print("heads: ", heads_percent)
+print("tails: ", round(tails_percent, 4), "%")
+print("heads: ", round(heads_percent, 4), "%")
