@@ -12,8 +12,6 @@ streak_best_heads = []
 streak_best_tails.insert(0, 0)
 streak_best_heads.insert(0, 0)
 
-
-
 def status_check():
     global tails, heads, streak_heads, streak_tails, streak_best_tails, streak_best_heads
     if status == "tails":
@@ -28,9 +26,8 @@ def status_check():
         streak_best_heads.insert(0, streak_heads)
         streak_tails = streak_tails - streak_tails
 
-
 def chance():
-    global status
+    global status, x
     x = randint(1, 2)
     if x == 1:
         status = "tails"
@@ -43,7 +40,6 @@ for x in range(flip):
     status_check()
 tails_percent = (tails * 100) / flip
 heads_percent = (heads * 100) / flip
-
 
 print("\ntails: ", round(tails_percent, 4), "%")
 print("heads: ", round(heads_percent, 4), "%")
