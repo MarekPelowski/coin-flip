@@ -46,7 +46,7 @@ try:
 except ZeroDivisionError:
     tails_percent = 0
     heads_percent = 0
-    print("\n\nERROR!\n\n")
+    print("\n\nERROR!\nTried to use 0!\n\n")
 
 
 print("\ntails: ", round(tails_percent, 4), "%")
