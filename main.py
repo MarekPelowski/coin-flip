@@ -9,6 +9,8 @@ streak_heads = 0
 streak_best_tails = []
 streak_best_heads = []
 
+streak_best_tails.insert(0, 0)
+streak_best_heads.insert(0, 0)
 
 
 
@@ -17,15 +19,14 @@ def status_check():
     if status == "tails":
         tails = tails + 1
         streak_tails = streak_tails + 1
-        streak_best_heads.insert(0, streak_heads)
-        streak_heads = 0
+        streak_best_tails.insert(0, streak_tails)
+        streak_heads = streak_heads - streak_heads
 
     elif status == "heads":
         heads = heads + 1
-        streak_heads = streak_tails + 1
-        streak_best_tails.insert(0, streak_heads)
-        streak_tails = 0
-
+        streak_heads = streak_heads + 1
+        streak_best_heads.insert(0, streak_heads)
+        streak_tails = streak_tails - streak_tails
 
 
 def chance():
@@ -40,12 +41,11 @@ def chance():
 for x in range(flip):
     chance()
     status_check()
-    print(status)
 tails_percent = (tails * 100) / flip
 heads_percent = (heads * 100) / flip
 
 
-print("tails: ", round(tails_percent, 4), "%")
+print("\ntails: ", round(tails_percent, 4), "%")
 print("heads: ", round(heads_percent, 4), "%")
-print("\ntails streak: ", max(streak_best_tails))
-print("heads streak: ", max(streak_best_heads))
+print("\ntails best streak: ", max(streak_best_tails))
+print("heads best streak: ", max(streak_best_heads))
