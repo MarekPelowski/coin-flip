@@ -38,8 +38,16 @@ def chance():
 for x in range(flip):
     chance()
     status_check()
-tails_percent = (tails * 100) / flip
-heads_percent = (heads * 100) / flip
+
+
+try:
+    tails_percent = (tails * 100) / flip
+    heads_percent = (heads * 100) / flip
+except ZeroDivisionError:
+    tails_percent = 0
+    heads_percent = 0
+    print("\n\nERROR!\n\n")
+
 
 print("\ntails: ", round(tails_percent, 4), "%")
 print("heads: ", round(heads_percent, 4), "%")
